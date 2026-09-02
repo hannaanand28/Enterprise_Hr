@@ -12,4 +12,5 @@ pytest
 httpx
 joblib
 matplotlib
+plotly
 anthropic
