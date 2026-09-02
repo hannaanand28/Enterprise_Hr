@@ -6,23 +6,22 @@ The platform combines **predictive analytics + explainable AI + retention playbo
 
 ---
 
-## 🚀 Deployed Application Links
-
-> 📌 **Your Custom Live Deployment Links:** Replace the placeholders below with your own live deployment URLs after following the deployment guide!
+## 🚀 Live Deployed Application Links
 
 ### 🌐 Streamlit Dashboard (Frontend)
-👉 **Live Web App:**  
-`https://<YOUR-STREAMLIT-APP-NAME>.streamlit.app/`
+👉 **Live Web Application:**  
+https://pulsehr-aionrendercom-kavcuup5tduzhaoj84ulqm.streamlit.app/
 
 ### ⚙️ FastAPI Backend Service
 👉 **Live API Endpoint:**  
-`https://<YOUR-RENDER-APP-NAME>.onrender.com`
+https://pulsehr-ai.onrender.com/
 
-👉 **API Documentation (Interactive Swagger):**  
-`https://<YOUR-RENDER-APP-NAME>.onrender.com/docs`
+👉 **Interactive API Documentation (Swagger):**  
+https://pulsehr-ai.onrender.com/docs
 
-👉 **Health Endpoint:**  
-`https://<YOUR-RENDER-APP-NAME>.onrender.com/health`
+👉 **Health Check Endpoint:**  
+https://pulsehr-ai.onrender.com/health
+
 
 ---
 
