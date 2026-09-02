@@ -1,19 +1,15 @@
 """
-FastAPI backend for the Enterprise HR AI - Workforce Intelligence & Upskilling Platform.
-
-Run with:
-    uvicorn app.main:app --reload --app-dir .
-(from the enterprise_hr_ai/ project root)
+FastAPI backend for PulseHR AI — Next-Gen Workforce Intelligence & Retention Command.
 """
 from fastapi import FastAPI
 from app.api import attrition, dashboard, skills, policy, agent, career
 from app.utils.logger import logger
 
 app = FastAPI(
-    title="Enterprise HR AI - Workforce Intelligence Platform",
-    description="Predicts attrition, tracks engagement, finds skill gaps, recommends upskilling, "
-                "answers HR policy questions (RAG), and routes requests through specialized agents.",
-    version="1.1.0",
+    title="PulseHR AI — Workforce Intelligence & Retention Command",
+    description="Next-generation HR decision engine predicting employee attrition risk, generating AI retention playbooks, "
+                "analyzing skill gaps, conducting policy simulation, and routing inquiries through intelligent agents.",
+    version="2.0.0",
 )
 
 app.include_router(attrition.router)
@@ -26,15 +22,21 @@ app.include_router(career.router)
 
 @app.on_event("startup")
 def on_startup():
-    logger.info("Application starting up")
-    logger.info("Dataset and model paths configured")
+    logger.info("PulseHR AI Backend starting up")
+    logger.info("ML inference pipeline & intelligence databases online")
 
 
 @app.get("/")
 def root():
-    return {"status": "ok", "service": "Enterprise HR AI Platform", "docs": "/docs"}
+    return {
+        "status": "ok",
+        "service": "PulseHR AI Intelligence Platform",
+        "version": "2.0.0",
+        "docs": "/docs"
+    }
 
 
 @app.get("/health")
 def health():
-    return {"status": "healthy"}
+    return {"status": "healthy", "service": "PulseHR AI Engine"}
+

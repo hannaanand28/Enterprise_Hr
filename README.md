@@ -1,53 +1,72 @@
-# Enterprise HR AI — Workforce Intelligence & Upskilling Platform
+# ⚡ PulseHR AI — Next-Gen Workforce Intelligence & Retention Command
 
-An industry-oriented **Enterprise HR AI Platform** designed to support modern HR decision-making through **Machine Learning, Workforce Intelligence, Skill Analytics, Career Readiness, Policy Intelligence, and an AI-powered HR Assistant**.
+An industry-leading, enterprise-grade **Workforce Intelligence & AI Retention Platform** designed to revolutionize modern HR decision-making through **Predictive Machine Learning, AI Retention Playbooks, Team Burnout Analytics, Career Readiness, Policy Intelligence, and Multi-Agent Automation**.
 
-The platform combines **predictive analytics + explainable AI + workforce intelligence + HR automation** into a unified HR decision-support system.
-
----
-
-## 🚀 Live Deployment
-
-### 🌐 Streamlit Dashboard
-
-👉 **Live Application:**  
-https://enterprisehrai-lqkumckjcgy889ekupy9bj.streamlit.app/
-
-### ⚙️ FastAPI Backend
-
-👉 **Backend API:**  
-https://enterprise-hr-ai-b8qx.onrender.com
-
-👉 **API Documentation (Swagger):**  
-https://enterprise-hr-ai-b8qx.onrender.com/docs
-
-👉 **Health Check:**  
-https://enterprise-hr-ai-b8qx.onrender.com/health
-
-The backend is deployed using **Render**, while the interactive HR dashboard is deployed using **Streamlit Community Cloud**.
+The platform combines **predictive analytics + explainable AI + retention playbooks + HR agent orchestration** into a unified, high-performance decision command center.
 
 ---
 
-# 📌 Project Overview
+## 🚀 Deployed Application Links
 
-The **Enterprise HR AI Platform** is an intelligent HR decision-support system that helps organizations understand workforce behavior, predict employee attrition, identify skill gaps, evaluate career readiness, analyze workforce capacity, and interact with HR policies using AI.
+> 📌 **Your Custom Live Deployment Links:** Replace the placeholders below with your own live deployment URLs after following the deployment guide!
 
-The system integrates:
+### 🌐 Streamlit Dashboard (Frontend)
+👉 **Live Web App:**  
+`https://<YOUR-STREAMLIT-APP-NAME>.streamlit.app/`
 
-- Machine Learning
-- Explainable AI
-- Workforce Analytics
-- Skill Intelligence
-- Career Intelligence
-- Policy Q&A
-- AI HR Assistant
-- What-If Workforce Simulation
-- Financial Exposure Analysis
-- Employee-Level Drilldowns
+### ⚙️ FastAPI Backend Service
+👉 **Live API Endpoint:**  
+`https://<YOUR-RENDER-APP-NAME>.onrender.com`
 
-The goal is to move HR from **reactive reporting → predictive → intelligent decision-making**.
+👉 **API Documentation (Interactive Swagger):**  
+`https://<YOUR-RENDER-APP-NAME>.onrender.com/docs`
+
+👉 **Health Endpoint:**  
+`https://<YOUR-RENDER-APP-NAME>.onrender.com/health`
 
 ---
+
+## 🛠️ Step-by-Step Free Deployment Guide
+
+### Step 1: Deploy Backend to Render (Free Cloud Host)
+1. Push this repository to your GitHub account.
+2. Sign in to **[Render.com](https://render.com/)** using GitHub.
+3. Click **New +** ➔ **Web Service**.
+4. Select your `PulseHR AI` (or `Enterprise_Hr`) repository.
+5. Set the following build options:
+   * **Name:** `pulsehr-backend` (or your choice)
+   * **Environment:** `Python 3`
+   * **Build Command:** `pip install -r requirements.txt`
+   * **Start Command:** `uvicorn app.main:app --host 0.0.0.0 --port $PORT`
+6. Click **Create Web Service**. Render will deploy your API and give you your URL (e.g. `https://pulsehr-backend.onrender.com`).
+
+### Step 2: Deploy Frontend to Streamlit Community Cloud (Free)
+1. Sign in to **[share.streamlit.io](https://share.streamlit.io/)** using GitHub.
+2. Click **New app**.
+3. Select your repository, branch (`main`), and set **Main file path** to `frontend/streamlit_app.py`.
+4. Under **Advanced settings**, add an **Environment variable**:
+   * **Key:** `API_BASE`
+   * **Value:** `https://<YOUR-RENDER-APP-NAME>.onrender.com` (Your Render backend URL from Step 1)
+5. Click **Deploy!** Your custom web dashboard will be live at `https://<YOUR-APP-NAME>.streamlit.app`.
+
+---
+
+# 📌 Platform Capabilities & Features
+
+PulseHR AI provides enterprise HR leaders with:
+
+* **Predictive Attrition Modeling:** Employee flight risk classification (`HIGH`, `MEDIUM`, `LOW`) with SHAP explainability.
+* **⚡ AI Retention Action Playbooks:** Automated personalized retention strategies (Salary Equity, OverTime Caps, Mentorship).
+* **🔥 Team Burnout Matrix:** Interactive heatmap pinpointing high-stress roles across departments.
+* **🎓 Skill Gap Analytics & Upskilling:** O*NET role skill gap severity mapping and automated course recommendations.
+* **🚀 Career Path Readiness:** Next-role progression mapping and percentage readiness scoring.
+* **💰 Financial Exposure Modeling:** Interactive turnover cost multiplier exposure calculators ($).
+* **🧪 What-If Policy Lab:** Real-time simulation of compensation hikes and overtime elimination impacts.
+* **💬 Multi-Agent Policy Q&A:** RAG-powered policy assistant with role-based privilege checks (`employee`, `manager`, `hr_admin`).
+* **📥 Executive CSV Export:** One-click CSV downloads for executive briefing reports.
+
+---
+
 
 # 🎯 Key Objectives
 
