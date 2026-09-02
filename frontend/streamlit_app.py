@@ -19,7 +19,36 @@ st.set_page_config(
     initial_sidebar_state="expanded",
 )
 
-API_BASE = os.getenv("API_BASE", "http://127.0.0.1:8000")
+def get_api_base() -> str:
+    # 1. Check environment variables
+    for env_key in ["API_BASE", "API_URL"]:
+        val = os.getenv(env_key)
+        if val:
+            return val.rstrip("/")
+
+    # 2. Check Streamlit Secrets (for Streamlit Cloud deployment)
+    try:
+        if hasattr(st, "secrets"):
+            for sec_key in ["API_BASE", "API_URL"]:
+                if sec_key in st.secrets:
+                    return str(st.secrets[sec_key]).rstrip("/")
+    except Exception:
+        pass
+
+    # 3. Check if local server on port 8000 is online
+    try:
+        r = requests.get("http://127.0.0.1:8000/health", timeout=1)
+        if r.status_code == 200:
+            return "http://127.0.0.1:8000"
+    except Exception:
+        pass
+
+    # 4. Fallback to live Render production API
+    return "https://pulsehr-ai.onrender.com"
+
+
+API_BASE = get_api_base()
+
 
 # ---------------------------------------------------------------------------
 # Custom CSS Design System (Dark Glassmorphism, Neon Accents, Modern SaaS UI)
